@@ -26,6 +26,7 @@ def menu_principal():
 
 def ejecutar_opcion(opcion):
     dao = DAO()
+
     if opcion == 1:
         try:
             listar_usuarios = dao.listar_usuarios()
@@ -35,8 +36,14 @@ def ejecutar_opcion(opcion):
                 print('no se han encontrado cursos')
         except Error as ex:
             print('Error  {0}'.format(ex))
+
     elif opcion == 2:
-        pass
+        usuario = dto.funciones.registro_usuario()
+        try:
+            dao.agregar_usuario(usuario)
+
+        except Error as ex:
+            print('Error  {0}'.format(ex))
     elif opcion == 3:
         pass
     elif opcion == 4:

@@ -32,9 +32,21 @@ class DAO():
                 return resultado_listado
             except Error as ex:
                 print('Error al intentar la conexion {0}'.format(ex))
-            finally:
-                if self.la_conexion.is_connected():
-                    self.la_conexion.close()
-                    print('conexion finalizada')
+            # finally:
+            #     if self.la_conexion.is_connected():
+            #         self.la_conexion.close()
+            #         print('conexion finalizada')
+    
+    def agregar_usuario(self , usuario):
+        if(self.la_conexion.is_connected):
+            try:
+                cursor = self.la_conexion.cursor()
+                sentencia_sql = "INSERT INTO login_usuario (nombre , apellido , email , edad) VALUES ('{0}', '{1}' , '{2}' , '{3}')"
+                cursor.execute(sentencia_sql.format(usuario[0] , usuario[1] , usuario[2] , usuario[3]))
+                self.la_conexion.commit()
+                print('Usuario registrado\n')
+            except Error as ex:
+                print('Error al intentar la conexion {0}'.format(ex))
+    
 
 
