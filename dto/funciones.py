@@ -24,7 +24,6 @@ def id_actualizado(usuarios):
     usuario_actualizado = int(input('ingrese el codigo de usuario a actualizar: '))
     for usuario in usuarios:
         if usuario[0] == usuario_actualizado:
-            print(usuario[0])
             codigo = True
             break
     if (codigo):

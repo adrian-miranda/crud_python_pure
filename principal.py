@@ -46,7 +46,7 @@ def ejecutar_opcion(opcion):
     elif opcion == 3:
         try:
             listar_usuarios = dao.listar_usuarios()
-            if (len(listar_usuarios) > 0):
+            if(len(listar_usuarios) > 0):
                 usuario = dto.funciones.id_actualizado(listar_usuarios)
                 if usuario:
                     dao.actualizar_usuario(usuario)

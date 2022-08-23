@@ -54,7 +54,6 @@ class DAO():
             try:
                 cursor = self.la_conexion.cursor()
                 sentencia_sql = "UPDATE login_usuario SET nombre = '{1}' , apellido = '{2}' , email = '{3}' , edad = '{4}' WHERE id = {5}"
-                print('hasta aca llega')
                 cursor.execute(sentencia_sql.format(usuario[1] , usuario[2] , usuario[3] , usuario[4] , usuario[0]))
                 self.la_conexion.commit()
                 print('Usuario Actualizado\n')
