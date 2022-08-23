@@ -48,5 +48,17 @@ class DAO():
             except Error as ex:
                 print('Error al intentar la conexion {0}'.format(ex))
     
+    def borrar_usuario(self , usuario_a_borrar):
+        if(self.la_conexion.is_connected):
+            try:
+                cursor = self.la_conexion.cursor()
+                sentencia_sql = "DELETE FROM login_usuario WHERE id = {0} " # el {0} no va entre comillas porque es numero y no string, en funciones.py para que funcione el input debe ir envuelto en una conversion a int
+                cursor.execute(sentencia_sql.format(usuario_a_borrar))
+                self.la_conexion.commit()
+                print('Usuario borrado\n')
+            except Error as ex:
+                print('Error al intentar la conexion {0}'.format(ex))
+
+    
 
 

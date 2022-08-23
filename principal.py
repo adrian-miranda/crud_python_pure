@@ -41,13 +41,21 @@ def ejecutar_opcion(opcion):
         usuario = dto.funciones.registro_usuario()
         try:
             dao.agregar_usuario(usuario)
-
         except Error as ex:
             print('Error  {0}'.format(ex))
     elif opcion == 3:
         pass
     elif opcion == 4:
-        pass
+        try:
+            listar_usuarios = dao.listar_usuarios()
+            if(len(listar_usuarios) > 0):
+                codigo_eliminar = dto.funciones.id_borrado(listar_usuarios)
+                if not(codigo_eliminar == ''):
+                    dao.borrar_usuario(codigo_eliminar)
+                else:
+                    print('Usuario no encontrado')
+        except Error as ex:
+            print('Error  {0}'.format(ex))
     else:
         print('opcion no valida')
     # return print(opcion)
