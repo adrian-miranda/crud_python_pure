@@ -44,7 +44,18 @@ def ejecutar_opcion(opcion):
         except Error as ex:
             print('Error  {0}'.format(ex))
     elif opcion == 3:
-        pass
+        try:
+            listar_usuarios = dao.listar_usuarios()
+            if (len(listar_usuarios) > 0):
+                usuario = dto.funciones.id_actualizado(listar_usuarios)
+                if usuario:
+                    dao.actualizar_usuario(usuario)
+                else:
+                    print('Id usuario no encontrado')
+            else:
+                print('Usuario no encontrado')
+        except Error as ex:
+            print('Error  {0}'.format(ex))
     elif opcion == 4:
         try:
             listar_usuarios = dao.listar_usuarios()
