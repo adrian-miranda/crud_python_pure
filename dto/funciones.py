@@ -34,7 +34,10 @@ def id_actualizado(usuarios):
         mes_editado = input('Ingrese mes a modificar: ')
         dia_editado = input('Ingrese dia a modificar: ')
         edad_editado = (f'{anio_editado}-{mes_editado}-{dia_editado}')
-        usuario_editado = (nombre_editado , apellido_editado ,email_editado,  edad_editado)
+        usuario_editado = (usuario_actualizado , nombre_editado , apellido_editado ,email_editado,  edad_editado)
+        #faltaba pasar un argumento en este caso el codigo , ahora bien hay que pasarlo al inicio el usuario_actualizado(que es el id) para que quede en orden la actualizacion
+        # ahora funciono con el orden de aca mas el de conexion.py
+        # usuario_editado = (nombre_editado , apellido_editado ,email_editado,  edad_editado, codigo)
     else:
         usuario_editado = None
     return usuario_editado
