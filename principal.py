@@ -10,13 +10,13 @@ def menu_principal():
         opcion_correcta = False
         #Al inicio del ciclo no hay una opcion correcta, porque no se ha seleccionado ninguna
         while not(opcion_correcta):
-            opcion = int(input('\nQue le gustaria hacer:\n\n1._Buscar: \n2._Agregar: \n3._Modificar: \n4._Borrar: \n5._Salir: '))
+            opcion = int(input('\nQue le gustaria hacer:\n\n1._Buscar\n2._Agregar\n3._Modificar\n4._Borrar\n5._Salir\n\nEscriba su opcion: '))
             if (opcion < 1 or opcion > 5):
                 print('Opcion Icorrecta')
             elif (opcion == 5):
                 continuar = False 
                 #de esta manera cortamos el ciclo
-                print('Hasta pronto')
+                print('\nHasta pronto\n')
                 break
                 #de esta manera salimos del ciclo
             else:
